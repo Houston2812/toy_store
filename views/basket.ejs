@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+    <div class="my-basket">
+        <% if ( exist ) { %>
+        <h2 style="border-bottom: 1px solid silver; font-weight: normal; text-align: center;"><span style="text-transform: uppercase;"><%= username %>'</span>s basket</h2>
+
+            <table class="hoverable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(item => { %>
+                        <tr>
+                            <td data-label='Name'> <%= item.title %> </td>
+                            <td data-label='Quantity'> <%= item.quantity %> </td>
+                            <td data-label="Price"> <%= item.price %> </td>
+
+                            <td> <a href="/remove/<%= item.id %>"> <button class="secondary">Remove</button> </a> </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <br>
+            <div>
+                <p style="float: left; border: 2px solid silver; padding: 4px 12px; font-size: 24px; ">Total price: <%= total_price %>$</p>
+                <a href="/buy" onclick = "alert('Operation passed successfully!')" class="button tertiary" style="padding: 4px 12px; font-size: 24px">Buy</a>
+                <a href="/removeAll" onclick = "alert('All items were removed successfully!')" class="button secondary" style="padding: 4px 12px; font-size: 24px; float: right;">Clear basket</a>
+            </div>
+            <br><br><br>
+            <% } else {%>
+                <div style="width: 430px; margin: 0 auto;">
+                    <h1 > <span style="text-transform: uppercase;"><%= username %>'</span>s basket is empty. </h1>
+                    <img src="cart_is_empty.png" width="300px" height="300px">
+                </div>
+            <% } %>
+    </div>
+
+    <div>
+    <footer>
+            <%- include('partials/footer') %>
+        </footer>
+    </div>
+    
+</body>
+</html>

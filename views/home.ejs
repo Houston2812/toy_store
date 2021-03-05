@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+
+    <div class="box" background = <%= image %>>
+        <div>
+            <h1 class='welcome-header'>Welcome to H&C Toy Store</h1>
+        </div>
+    </div>
+    <div class="col-lg-offset-1  row" style="-webkit-justify-content: space-around; justify-content: space-around;" >
+
+    <% items.forEach(item => { %>
+        <div class="my-class">
+            <div class="card">
+              
+                <img src=<%= item.pic_name %> class="section media">
+              
+                <h3 class="section double-padded"> <%= item.name %></h3>
+                <p class="section double-padded" style="min-height: 70px;"><%= item.description%></p>
+                <p class="section double-padded">Price: <%= item.price %>$</p>
+                
+                <a href="/add/<%= item.id %>" id="buy" role="button"> Add to cart</a>              
+            </div>
+          </div>
+    <% }) %>
+    </div>
+    <button class="see-full" id="buy"><a href="/catalogue" role='button' style="background-color: transparent" ><h3>See full catalogue</h3></a></button>    
+    
+    <footer>
+        <%- include('partials/footer') %>
+  
+     </footer>
+    
+    
+</body>
+</html>

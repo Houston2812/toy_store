@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+    <div style="width: 700px; margin: 0 auto;">
+        <h1>Error! You need to sign in to access this page.</h1>
+        
+        <div class="container" style="width: 700px; margin-left: 90px;">
+            <div class="row">
+                <div class="col-md">
+                    <a href="/home" class="button primary" style=" text-align: center; text-transform: uppercase; ">Return to home page!</a>
+                </div>
+                <div class="col-md">
+                    <a href="/login" class="button tertiary" style=" text-align: center; text-transform: uppercase;">Log in</a>    
+                </div>
+            </div>
+        </div>
+         
+    </div>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+</html>

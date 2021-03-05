@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <%- include('partials/head') %>
+    </head>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+   
+    <div class="row">
+        <div class="col-sm">
+            <table class="horizontal">
+                <caption style="border-bottom: 1px solid silver">Profile settings</caption>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <%= information[0].username %></td>
+                        <td> <%= information[0].email %></td>
+                        <td> <%= information[0].phone_number %></td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>    
+        <div class="col-sm-3">
+          <img style="margin-top: 20px; border: 1px solid royalblue" src=<%= information[0].profile_picture %> />
+        </div>
+       
+      </div>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<a href="/home" class="logo" >H&C</a>
+<span style="font-size: 24px;">|</span>
+<a href="/home" class="button" id="nav-el" >Home</a>
+<a href="/catalogue" class="button" id="nav-el" >Catalogue</a>
+<div style="float: right;">
+    <% if (is_logged) { %>
+        <a href="/settings" class="button" id="nav-el" ><%= username %></a>
+        <a href="/basket" class="button" id="nav-el" >Basket</a>
+        <a href="/logout" class="button" id="nav-el" >Log Out</a>
+    <% } else { %>
+        <a href="/login" class="button"  id="nav-el" >Log In</a>
+    <% } %>
+</div>
+

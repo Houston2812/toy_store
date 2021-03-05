@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%- include('partials/head')%>
+    
+</head>
+<body>
+  <header>
+  <%- include('partials/header')%>
+  </header>
+  <a href="add_new" class="button tertiary" style="float: right;">Add new item</a>
+  <br/>
+
+      <br/>
+      <div class="container">
+        <div class="row cols-sm-12 cols-lg-10">
+          <!-- Add the extra style to make card spacing look better -->
+          <div class="col-lg-offset-1  row" style="-webkit-justify-content: space-around; justify-content: space-around;" >
+              <% items.forEach(item => {%>
+                <div class="my-class">
+                  <div class="card">
+                    <img src=<%= item.pic_name %> class="section media">
+                  
+                    <h3 class="section double-padded"><%= item.name %> </h3>
+                    <p class="section double-padded" style="min-height: 70px;"><%= item.description %> </p>
+                    <p class="section double-padded">Price: <%= item.price %>$ </p>
+                    <a href="/add/<%= item.id %>" role="button" id="buy"> Add to cart</a>              
+
+                  </div>
+                </div>
+              <% }) %>
+
+          </div>
+        </div>
+      </div>
+
+
+      <footer>
+       <%- include('partials/footer') %>
+      </footer>
+</body>
+
+</html>

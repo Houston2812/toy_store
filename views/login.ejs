@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('partials/head') %>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+
+    </header>
+    <div style="width: 500px; margin: 0 auto;">
+        <form action="/login" method="POST">
+            <fieldset>
+                <legend>Login</legend>
+                <input type="text" name = "username" id="username" placeholder="Username" style="width: 100%;"/>
+                <br>
+                <input type="text" name = "password" id="password" placeholder="Password" style="width: 100%;" />
+                <br>
+                <input type="submit" value="Log In" style=" margin-left: 40%; padding-left: 20px; padding-right: 20px;" >
+            </fieldset>
+        </form>
+    </div>
+
+    <footer>
+        <%- include('partials/footer') %>
+
+    </footer>
+</body>
+</html>

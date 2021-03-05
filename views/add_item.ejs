@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <%- include('partials/head') %>
+    </head>
+</head>
+<body>
+    <header>
+        <%- include('partials/header') %>
+    </header>
+
+      <form action="#" method="POST" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Add item to the magazine</legend>
+                <div class="input-group vertical">
+                    <label for="product_name">Name of the produc</label>
+                    <input type="text" name="product_name" placeholder="Name of the product">
+                </div>
+                <div  class="input-group vertical">
+                    <label for="description">Description of the product</label>
+                    <input type="text" name="description" placeholder="Description of the product">
+                </div>                
+                <div  class="input-group vertical">
+                    <label for="amount">Amount of the product</label>
+                    <input type="number" name="amount" placeholder="Amount of the product">
+                </div >
+                <div  class="input-group vertical">
+                    <label for="price">Price of the product</label>
+                    <input type="number" name="price" placeholder="Price of the product">
+                </div>
+                <div class="input-group ">
+                    <label >Image of your product</label>
+                    <br>
+                    <input type="file" name="file_input" id="file-input" style="margin-left: 10px;">
+                    <label for="file-input" class="button">Upload file...</label>
+                  </div>
+                <div  class="input-group vertical">
+                    <input type="submit" class="button primary">
+                </div>
+        </fieldset>
+      </form>    
+      <footer>
+        <%- include('partials/footer') %>
+    </footer>
+</body>
+</html>
